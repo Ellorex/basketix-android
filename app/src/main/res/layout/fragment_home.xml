@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.home.HomeFragment">
+
+    <TextView
+        android:id="@+id/current_date"
+        android:padding="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        tools:text="Date du jour" />
+
+    <LinearLayout
+        android:id="@+id/block_match"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/colorBlockMatchBg"
+        android:layout_marginBottom="15dp">
+
+        <LinearLayout
+            android:id="@+id/team_domicile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+            <TextView
+                android:id="@+id/team_domicile-name"
+                tools:text="équipe domicile"
+                android:layout_width="0dp"
+                android:layout_weight=".80"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/team_domicile-score"
+                tools:text="score"
+                android:layout_width="0dp"
+                android:layout_weight=".20"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/team_exterieur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+            <TextView
+                android:id="@+id/team_exterieur-name"
+                tools:text="équipe exterieur"
+                android:layout_width="0dp"
+                android:layout_weight=".80"
+                android:layout_height="wrap_content"  />
+            <TextView
+                android:id="@+id/team_exterieur-score"
+                tools:text="score"
+                android:layout_width="0dp"
+                android:layout_weight=".20"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

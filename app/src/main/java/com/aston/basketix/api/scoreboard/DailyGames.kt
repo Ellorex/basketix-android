@@ -1,4 +1,4 @@
-package com.aston.basketix.api.daily_games
+package com.aston.basketix.api.scoreboard
 
 import java.text.SimpleDateFormat
 import java.util.*
@@ -11,5 +11,5 @@ fun Date.toString(format: String, locale: Locale = Locale.getDefault()): String 
 val current_dailygames  = Calendar.getInstance().time
 val date_formated = current_dailygames.toString("yyyyMMdd")
 
-val URL_DAILYGAMES = "https://api.mysportsfeeds.com/v2.0/pull/nba/current/date/$date_formated/games.json"
+val URL_DAILYGAMES = "http://data.nba.net/10s/prod/v1/$date_formated/scoreboard.json"
 

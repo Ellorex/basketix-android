@@ -1,5 +1,6 @@
 package com.aston.basketix.db.models
 
+import com.aston.basketix.api.teams.Standard
 import com.aston.basketix.db.AppDatabase
 import com.raizlabs.android.dbflow.annotation.Column
 import com.raizlabs.android.dbflow.annotation.PrimaryKey
@@ -7,8 +8,14 @@ import com.raizlabs.android.dbflow.annotation.Table
 import com.raizlabs.android.dbflow.annotation.Unique
 import com.raizlabs.android.dbflow.structure.BaseModel
 
-@Table(database = AppDatabase::class)
-class Team : BaseModel() {
+@Table(database = AppDatabase::class, name = "Team")
+class Team(standardTeam: Standard?) : BaseModel() {
+    var standardTeam = null
+
+    constructor() : this(standardTeam = Standard()) {
+        println("Constructor")
+        this.standardTeam = standardTeam
+    }
 
     @Column
     @PrimaryKey(autoincrement = true)
@@ -16,35 +23,35 @@ class Team : BaseModel() {
 
     @Column
     @Unique
-    var teamId: Int = 0
+    var teamId: String? = standardTeam?.teamId
 
     @Column
-    var isNBAFranchise: Boolean = false
+    var isNBAFranchise: Boolean? = standardTeam?.isNBAFranchise
 
     @Column
-    var isAllStar: Boolean = false
+    var isAllStar: Boolean? = standardTeam?.isAllStar
 
     @Column
-    var city: String? = null
+    var city: String? = standardTeam?.city
 
     @Column
-    var altCityName: String? = null
+    var altCityName: String? = standardTeam?.altCityName
 
     @Column
-    var fullName: String? = null
+    var fullName: String? = standardTeam?.fullName
 
     @Column
-    var tricode: String? = null
+    var tricode: String? = standardTeam?.tricode
 
     @Column
-    var nickname: String? = null
+    var nickname: String? = standardTeam?.nickname
 
     @Column
-    var urlName: String? = null
+    var urlName: String? = standardTeam?.urlName
 
     @Column
-    var confName: String? = null
+    var confName: String? = standardTeam?.confName
 
     @Column
-    var divName: String? = null
+    var divName: String? = standardTeam?.divName
 }

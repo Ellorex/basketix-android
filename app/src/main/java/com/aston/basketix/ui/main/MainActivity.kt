@@ -49,28 +49,5 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-
-        // Create organization
-
-        // TODO : appel API http://data.nba.net/data/10s/prod/v1/2018/teams.json
-
-        val team = Team()
-        team.teamId = 1610612739
-        team.fullName = "Atlanta Hawks 3"
-
-        var queryTeam = SQLite.select().from(Team::class.java).where(Team_Table.teamId.eq(team.teamId)).queryList()
-
-        if(queryTeam.size < 1) {
-            team.save()
-        }
-
-
-
-        val teamList = SQLite.select().from(Team::class.java).queryList()
-
-        Log.e("db", "size: " + teamList.size)
-        for(team in teamList) {
-            Log.e("db", "team name: " + team.fullName)
-        }
     }
 }
